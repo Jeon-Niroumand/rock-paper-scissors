@@ -1,10 +1,14 @@
-const playerSelection = prompt("Type: Rock, Paper or Scissors to play and press enter");
-console.log(`You chose ${playerSelection.toLowerCase()}`);
-
 var items = ['rock','paper','scissors'];
 const computerSelection = computerPlay(items);
 
-function playRound(playerSelection,computerSelection)
+function computerPlay(items)  //computer picks rock,paper or scissors randomly
+{
+
+return items[Math.floor(Math.random()*items.length)];
+
+}
+
+function playRound(playerSelection,computerSelection) //win,lose,draw logic
 {
 
 if (playerSelection == computerSelection)
@@ -20,13 +24,13 @@ return `you Lose! ${computerSelection} beats ${playerSelection}!`;
 
 }
 
-function computerPlay(items)  //computer picks rock,paper or scissors randomly
+function game()
 {
 
-return items[Math.floor(Math.random()*items.length)];
+const playerSelection = prompt("Type: Rock, Paper or Scissors to play and press enter");
+console.log(`You chose ${playerSelection.toLowerCase()}`);
+const computerSelection = computerPlay(items);
+console.log(`The computer chose ${computerSelection}`);
+console.log(playRound(playerSelection, computerSelection));
 
 }
-
-playRound(playerSelection, computerSelection);
-
-console.log(`The computer chose ${computerSelection}`);
