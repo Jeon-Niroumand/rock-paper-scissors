@@ -8,29 +8,56 @@ return items[Math.floor(Math.random()*items.length)];
 
 }
 
-function playRound(playerSelection,computerSelection) //win,lose,draw logic
+let win = 0, //initialize the variables used in playRound()
+    lose = 0,
+    draw = 0;
+
+function playRound(playerSelection,computerSelection) //win,lose,draw logic per round.
 {
 
 if (playerSelection == computerSelection)
-return `It's a tie! You chose ${playerSelection} and the computer chose ${computerSelection}`;
+    return draw++,`It's a tie! You chose ${playerSelection} and the computer chose ${computerSelection}`;
 else if(playerSelection == `rock` & computerSelection == `scissors`)
-return `You win! ${playerSelection} beats ${computerSelection}!`;
+    return win++,`You win! ${playerSelection} beats ${computerSelection}!`;
 else if(playerSelection == `paper` & computerSelection == `rock`)
-return `You win! ${playerSelection} beats ${computerSelection}!`;
+    return win++,`You win! ${playerSelection} beats ${computerSelection}!`;
 else if (playerSelection == `scissors` & computerSelection == `paper`)
-return `You win! ${playerSelection} beats ${computerSelection}!`;
+    return win++,`You win! ${playerSelection} beats ${computerSelection}!`;
 else
-return `you Lose! ${computerSelection} beats ${playerSelection}!`;
+    return lose++,`you Lose! ${computerSelection} beats ${playerSelection}!`;
 
 }
 
-function game()
+function results() //game result logic, tallies win, lose, draw and prints winner(s)
 {
 
-const playerSelection = prompt("Type: Rock, Paper or Scissors to play and press enter");
+if (win == lose)
+    return `It's a tie! You won ${win} rounds, lost ${lose} rounds, and tied ${draw} rounds`;
+else if (win > lose)
+    return `You win! You won ${win} rounds, lost ${lose} rounds, and tied ${draw} rounds`;
+else
+    return `You lose! You won ${win} round, lost ${lose} rounds, and tied ${draw} rounds`;
+
+}
+
+function game() //plays 1 round of rock-paper-scissors
+{
+
+const playerSelection = prompt("Type: rock, paper or scissors to play and press enter (best of 5 rounds wins)");
+console.log(`ROUND ${round} RESULTS:`)
 console.log(`You chose ${playerSelection.toLowerCase()}`);
 const computerSelection = computerPlay(items);
 console.log(`The computer chose ${computerSelection}`);
 console.log(playRound(playerSelection, computerSelection));
 
 }
+
+let round = 1;
+for (round; round < 6; round++) //play 5 rounds and increment win.lose,draw vars.
+{
+game()
+
+}
+
+console.log(`***********************FINAL RESULTS***********************`)
+console.log(results());
