@@ -53,7 +53,7 @@ console.log(playRound(playerSelection, computerSelection));
 }
 
 let round = 1;
-for (round; round < 6; round++) //play 5 rounds and increment win.lose,draw vars.
+for (round; round < 1; round++) //play 5 rounds and increment win.lose,draw vars.
 {
 game()
 
