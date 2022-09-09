@@ -52,7 +52,7 @@ console.log(playRound(playerSelection, computerSelection));
 
 }
 
-let round = 1;
+/****UNCOMMENT WHEN DONE WITH UI**************let round = 1;
 for (round; round < 1; round++) //play 5 rounds and increment win.lose,draw vars.
 {
 game()
@@ -60,4 +60,11 @@ game()
 }
 
 console.log(`***********************FINAL RESULTS***********************`)
-console.log(results());
+console.log(results());*/
+
+const element = document.getElementById("rock");
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+    alert("rock")
+}
