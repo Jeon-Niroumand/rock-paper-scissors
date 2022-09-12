@@ -7,25 +7,28 @@
     <script src="rockpaperscissors.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--THIS IS A BACKUP EMOJI API IF SVG FILES ARE REMOVED-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--THIS IS A BACKUP EMOJI API IF SVG FILES ARE REMOVED-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&display=swap" rel="stylesheet"> <!--THIS IS A BACKUP EMOJI API IF SVG FILES ARE REMOVED-->
 </head>
 <body>
 
-    <div class="header">Rock, Paper, Scissors</div>
+    <div class="header">Rock Paper Scissors</div>
     
-    <div class="resultWindow"></div>
+    <div id="resultWindow"></div>
 
-    <!-------------------------------------------------------------
+    <!-----------------------SVG FILES--------------------------------------
 *    Title: OpenMoji
 *    Author: Students and Professors of the HfG Schwäbisch Gmünd and external contributors
 *    Date: 2022
 *    Code version: 14.0.0
 *    Availability: https://openmoji.org/
-    -------------------------------------------------------------->
-    <div class="buttons">  <!--ROCK BUTTON-->
-        <button id="rock">🪨</button>
-        <button id="paper">📃</button>
-        <button id="scissors">✂️</button>         
+    ----------------------------------------------------------------------->
+    <div class="buttons">
+        <button id="rock"><img src="./img/1FAA8.svg"><!--🪨--></button> <!--Uncomment the button text if SVG files are removed-->
+        <button id="paper"><img src="./img/1F9FB.svg"><!--🧻--></button> <!--Uncomment the button text if SVG files are removed-->
+        <button id="scissors"><img src="./img/2702.svg"><!--✂️--></button> <!--Uncomment the button text if SVG files are removed-->         
     </div>
 
 </body>
